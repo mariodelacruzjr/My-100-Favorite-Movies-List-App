@@ -66,7 +66,7 @@ while user_choice != '-1':
         print('EXIT: -1')
         user_choice_gendre = input()
         
-        
+        #user_page_response = '1'
         temp_page=1
         
         response2 = requests.get('https://api.themoviedb.org/3/discover/movie?api_key=3372059c7957b772cf7c72b570ae110f&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page={}&with_genres={}&with_watch_monetization_types=flatrate'.format(temp_page, user_choice_gendre))
@@ -94,7 +94,7 @@ while user_choice != '-1':
                 while genre_id_selected != '-1':
                     response2 = requests.get('https://api.themoviedb.org/3/discover/movie?api_key=3372059c7957b772cf7c72b570ae110f&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page={}&with_genres={}&with_watch_monetization_types=flatrate'.format(genre_id_selected, user_choice_gendre))
 
-                    
+                    #genre_id_selected = input()
                     if genre_id_selected[0]=='A':
 
                         user_page_response_add_movie_id = int(genre_id_selected[2::])
@@ -108,6 +108,9 @@ while user_choice != '-1':
                     genre_id_selected = '-1'
                     
 
+        #user_choice = input()
+        #
+        #print("")
 
     
     else:
